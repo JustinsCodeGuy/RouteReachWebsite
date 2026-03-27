@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions — RouteReach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal-hero {
+      background: linear-gradient(160deg, #4a0e8f 0%, #7c22d4 40%, #9b3def 70%, #6e1fbe 100%);
+      padding: 140px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .legal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .legal-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .legal-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+    }
+
+    .legal-hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      color: white;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .legal-hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .legal-body {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 72px 24px 100px;
+    }
+
+    .legal-toc {
+      background: #f3e8ff;
+      border: 1px solid rgba(139,43,226,0.15);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+
+    .legal-toc h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--purple);
+      margin-bottom: 16px;
+    }
+
+    .legal-toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+
+    .legal-toc li {
+      counter-increment: toc;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .legal-toc li::before {
+      content: counter(toc);
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: var(--purple);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .legal-toc a {
+      font-size: 14px;
+      color: #4b0082;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .legal-toc a:hover {
+      color: var(--purple);
+      text-decoration: underline;
+    }
+
+    .legal-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 100px;
+    }
+
+    .legal-section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--purple-pale);
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .legal-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--purple-pale);
+    }
+
+    .legal-section p {
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .legal-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    .legal-section ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .legal-highlight {
+      background: #fdf4ff;
+      border-left: 3px solid var(--purple);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #4b0082;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .legal-highlight.warning {
+      background: #fff7ed;
+      border-left-color: #ea580c;
+      color: #7c2d12;
+    }
+
+    .legal-contact-card {
+      background: linear-gradient(135deg, #4a0e8f, #8B2BE2);
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+      margin-top: 64px;
+    }
+
+    .legal-contact-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .legal-contact-card p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+    }
+
+    .legal-contact-card a.email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: var(--purple);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .legal-contact-card a.email-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--purple);
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: gap 0.2s;
+    }
+
+    .back-link:hover { gap: 12px; }
+
+    @media (max-width: 600px) {
+      .legal-toc ol {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="RouteReachLOGO.png" alt="RouteReach" class="logo-img" />
+        <span class="logo-text">RouteReach</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#download">Download</a>
+      </div>
+      <div class="nav-cta">
+        <a href="index.html#download" class="btn-nav">Get the App</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="legal-hero">
+    <div class="legal-hero-inner">
+      <div class="legal-hero-badge">Legal</div>
+      <h1>Terms & Conditions</h1>
+      <p>Effective Date: March 27, 2026</p>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="legal-body">
+
+    <a href="index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to RouteReach
+    </a>
+
+    <!-- Table of Contents -->
+    <div class="legal-toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#s1">Use of the App</a></li>
+        <li><a href="#s2">Account Registration</a></li>
+        <li><a href="#s3">Campaigns & Team Management</a></li>
+        <li><a href="#s4">Location Tracking</a></li>
+        <li><a href="#s5">User Content</a></li>
+        <li><a href="#s6">Payments and Earnings</a></li>
+        <li><a href="#s7">Privacy</a></li>
+        <li><a href="#s8">Prohibited Uses</a></li>
+        <li><a href="#s9">Intellectual Property</a></li>
+        <li><a href="#s10">Disclaimers</a></li>
+        <li><a href="#s11">Limitation of Liability</a></li>
+        <li><a href="#s12">Termination</a></li>
+        <li><a href="#s13">Modifications</a></li>
+        <li><a href="#s14">Governing Law</a></li>
+        <li><a href="#s15">Contact Information</a></li>
+      </ol>
+    </div>
+
+    <p style="font-size:15px;color:#374151;line-height:1.75;margin-bottom:48px;">
+      Welcome to RouteReach! These Terms and Conditions ("Terms") govern your access to and use of the RouteReach mobile application ("App"), services, and features provided by RouteReach ("we," "our," or "us"). By downloading, installing, or using the App, you agree to be bound by these Terms. If you do not agree, do not use the App.
+    </p>
+
+    <!-- 1 -->
+    <div class="legal-section" id="s1">
+      <div class="legal-section-num">1</div>
+      <h2>Use of the App</h2>
+      <p>You may use RouteReach only for lawful purposes and in accordance with these Terms. You are responsible for all activity under your account, including campaigns, team management, and data shared.</p>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Violate any applicable laws or regulations.</li>
+        <li>Interfere with the App or its servers.</li>
+        <li>Attempt to gain unauthorized access to other users' accounts.</li>
+        <li>Copy, modify, or distribute the App or its content without permission.</li>
+      </ul>
+    </div>
+
+    <!-- 2 -->
+    <div class="legal-section" id="s2">
+      <div class="legal-section-num">2</div>
+      <h2>Account Registration</h2>
+      <ul>
+        <li>To use the App, you may be required to create an account with accurate and complete information.</li>
+        <li>You are responsible for keeping your login credentials secure.</li>
+        <li>You must be at least 13 years old to create an account.</li>
+      </ul>
+    </div>
+
+    <!-- 3 -->
+    <div class="legal-section" id="s3">
+      <div class="legal-section-num">3</div>
+      <h2>Campaigns and Team Management</h2>
+      <ul>
+        <li>RouteReach allows you to create campaigns (yard signs, postcards, door hangers), track team routes, and manage earnings.</li>
+        <li>You are responsible for ensuring your team members are informed about and consent to location tracking.</li>
+        <li>All earnings calculations, placement logs, and completion data are provided based on information collected by the App.</li>
+      </ul>
+      <div class="legal-highlight warning">RouteReach is not responsible for disputes between team members regarding earnings or campaign data.</div>
+    </div>
+
+    <!-- 4 -->
+    <div class="legal-section" id="s4">
+      <div class="legal-section-num">4</div>
+      <h2>Location Tracking</h2>
+      <ul>
+        <li>The App collects real-time GPS location data from team members for campaign tracking and route management.</li>
+        <li>By using the App, you consent to location tracking while the App is in use, including optional background tracking if enabled.</li>
+      </ul>
+      <div class="legal-highlight">Location data is shared only with your team or necessary service providers and is never sold.</div>
+    </div>
+
+    <!-- 5 -->
+    <div class="legal-section" id="s5">
+      <div class="legal-section-num">5</div>
+      <h2>User Content</h2>
+      <ul>
+        <li>You retain ownership of the data you upload or generate through the App, but you grant RouteReach a non-exclusive, worldwide, royalty-free license to use it to provide and improve services.</li>
+        <li>You are responsible for the content you share, including campaign details, images, and messages.</li>
+        <li>RouteReach may remove content that violates these Terms or applicable laws.</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="legal-section" id="s6">
+      <div class="legal-section-num">6</div>
+      <h2>Payments and Earnings</h2>
+      <ul>
+        <li>The App includes features to calculate team member earnings based on campaigns completed.</li>
+        <li>RouteReach does not manage or distribute actual payments unless explicitly specified in the App.</li>
+        <li>Any disputes regarding payments between users or team members are your responsibility.</li>
+      </ul>
+    </div>
+
+    <!-- 7 -->
+    <div class="legal-section" id="s7">
+      <div class="legal-section-num">7</div>
+      <h2>Privacy</h2>
+      <p>Use of the App is also governed by our <a href="privacy.html" style="color:var(--purple);font-weight:600;">Privacy Policy</a>, which explains how we collect, use, and share personal and location data. By using the App, you consent to the practices described in the Privacy Policy.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="legal-section" id="s8">
+      <div class="legal-section-num">8</div>
+      <h2>Prohibited Uses</h2>
+      <p>You may not use the App to:</p>
+      <ul>
+        <li>Harass, threaten, or abuse others.</li>
+        <li>Attempt to manipulate earnings, routes, or campaign data.</li>
+        <li>Introduce malicious software or disrupt App functionality.</li>
+        <li>Circumvent restrictions or security features.</li>
+      </ul>
+    </div>
+
+    <!-- 9 -->
+    <div class="legal-section" id="s9">
+      <div class="legal-section-num">9</div>
+      <h2>Intellectual Property</h2>
+      <ul>
+        <li>All content, logos, graphics, and software in the App are the property of RouteReach or its licensors and are protected by copyright, trademark, and other laws.</li>
+        <li>You may not reproduce, distribute, or create derivative works without express written permission.</li>
+      </ul>
+    </div>
+
+    <!-- 10 -->
+    <div class="legal-section" id="s10">
+      <div class="legal-section-num">10</div>
+      <h2>Disclaimers</h2>
+      <div class="legal-highlight warning">The App is provided "as is" and "as available." RouteReach does not guarantee accuracy of campaign data or earnings calculations.</div>
+      <ul>
+        <li>We are not responsible for any damages arising from use of the App, including lost revenue, incorrect placements, or team disputes.</li>
+      </ul>
+    </div>
+
+    <!-- 11 -->
+    <div class="legal-section" id="s11">
+      <div class="legal-section-num">11</div>
+      <h2>Limitation of Liability</h2>
+      <ul>
+        <li>To the fullest extent permitted by law, RouteReach and its affiliates, officers, and employees shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with the App.</li>
+        <li>Your sole remedy is to stop using the App if you disagree with any feature or content.</li>
+      </ul>
+    </div>
+
+    <!-- 12 -->
+    <div class="legal-section" id="s12">
+      <div class="legal-section-num">12</div>
+      <h2>Termination</h2>
+      <ul>
+        <li>We may suspend or terminate your account at our discretion if you violate these Terms.</li>
+        <li>You may also terminate your account at any time by contacting support.</li>
+        <li>Termination does not affect obligations incurred prior to termination, including payment disputes or legal liabilities.</li>
+      </ul>
+    </div>
+
+    <!-- 13 -->
+    <div class="legal-section" id="s13">
+      <div class="legal-section-num">13</div>
+      <h2>Modifications to the App or Terms</h2>
+      <ul>
+        <li>RouteReach may update the App, features, or Terms at any time.</li>
+        <li>Material changes to these Terms will be communicated via the App or email. Continued use after changes constitutes acceptance.</li>
+      </ul>
+    </div>
+
+    <!-- 14 -->
+    <div class="legal-section" id="s14">
+      <div class="legal-section-num">14</div>
+      <h2>Governing Law</h2>
+      <ul>
+        <li>These Terms are governed by the laws of the State of New Jersey, USA, without regard to conflict-of-law principles.</li>
+        <li>Any disputes will be resolved in the courts located in New Jersey.</li>
+      </ul>
+    </div>
+
+    <!-- 15 -->
+    <div class="legal-section" id="s15">
+      <div class="legal-section-num">15</div>
+      <h2>Contact Information</h2>
+      <p>If you have questions or concerns about these Terms:</p>
+    </div>
+
+    <!-- Contact card -->
+    <div class="legal-contact-card">
+      <h3>Questions about our Terms?</h3>
+      <p>Reach out and we'll get back to you as soon as possible.</p>
+      <a href="mailto:support@routereach.app" class="email-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        support@routereach.app
+      </a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="RouteReachLOGO.png" alt="RouteReach" class="logo-img" />
+        <span class="logo-text">RouteReach</span>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="#">Contact</a>
+        <a href="#">Support</a>
+      </div>
+      <div class="footer-copy">© 2026 RouteReach. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — RouteReach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .privacy-hero {
+      background: linear-gradient(160deg, #4a0e8f 0%, #7c22d4 40%, #9b3def 70%, #6e1fbe 100%);
+      padding: 140px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .privacy-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .privacy-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .privacy-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+    }
+
+    .privacy-hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      color: white;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .privacy-hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .privacy-body {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 72px 24px 100px;
+    }
+
+    .privacy-toc {
+      background: #f3e8ff;
+      border: 1px solid rgba(139,43,226,0.15);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+
+    .privacy-toc h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--purple);
+      margin-bottom: 16px;
+    }
+
+    .privacy-toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+
+    .privacy-toc li {
+      counter-increment: toc;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .privacy-toc li::before {
+      content: counter(toc);
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: var(--purple);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .privacy-toc a {
+      font-size: 14px;
+      color: #4b0082;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .privacy-toc a:hover {
+      color: var(--purple);
+      text-decoration: underline;
+    }
+
+    .privacy-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 100px;
+    }
+
+    .privacy-section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--purple-pale);
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .privacy-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--purple-pale);
+    }
+
+    .privacy-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 20px 0 8px;
+    }
+
+    .privacy-section p {
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .privacy-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    .privacy-section ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .privacy-highlight {
+      background: #fdf4ff;
+      border-left: 3px solid var(--purple);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #4b0082;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .privacy-contact-card {
+      background: linear-gradient(135deg, #4a0e8f, #8B2BE2);
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+      margin-top: 64px;
+    }
+
+    .privacy-contact-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .privacy-contact-card p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+    }
+
+    .privacy-contact-card a.email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: var(--purple);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .privacy-contact-card a.email-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--purple);
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: gap 0.2s;
+    }
+
+    .back-link:hover { gap: 12px; }
+
+    @media (max-width: 600px) {
+      .privacy-toc ol {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="RouteReachLOGO.png" alt="RouteReach" class="logo-img" />
+        <span class="logo-text">RouteReach</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#download">Download</a>
+      </div>
+      <div class="nav-cta">
+        <a href="index.html#download" class="btn-nav">Get the App</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="privacy-hero">
+    <div class="privacy-hero-inner">
+      <div class="privacy-hero-badge">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p>Effective Date: March 27, 2026</p>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="privacy-body">
+
+    <a href="index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to RouteReach
+    </a>
+
+    <!-- Table of Contents -->
+    <div class="privacy-toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#s1">Information We Collect</a></li>
+        <li><a href="#s2">How We Use Your Information</a></li>
+        <li><a href="#s3">Sharing Your Information</a></li>
+        <li><a href="#s4">Location Tracking</a></li>
+        <li><a href="#s5">Your Rights & Choices</a></li>
+        <li><a href="#s6">Data Retention</a></li>
+        <li><a href="#s7">Security</a></li>
+        <li><a href="#s8">Children's Privacy</a></li>
+        <li><a href="#s9">Third-Party Links</a></li>
+        <li><a href="#s10">Updates to This Policy</a></li>
+        <li><a href="#s11">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <p style="font-size:15px;color:#374151;line-height:1.75;margin-bottom:48px;">
+      RouteReach ("we," "our," or "us") respects your privacy and is committed to protecting the information you share while using our mobile app ("App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you download, install, or use RouteReach on iOS or Android devices. By using our App, you consent to the practices described in this policy.
+    </p>
+
+    <!-- 1 -->
+    <div class="privacy-section" id="s1">
+      <div class="privacy-section-num">1</div>
+      <h2>Information We Collect</h2>
+      <p>We collect information to provide, maintain, and improve RouteReach. This includes:</p>
+
+      <h3>a. Personal Information</h3>
+      <ul>
+        <li>Name, email address, and phone number.</li>
+        <li>Account login credentials.</li>
+        <li>Payment or billing information if using optional in-app payments.</li>
+      </ul>
+
+      <h3>b. Location Information</h3>
+      <ul>
+        <li>Real-time GPS coordinates while your team is using the App.</li>
+        <li>Route history, timestamps, and placement confirmations for yard signs, postcards, and door hangers.</li>
+      </ul>
+      <div class="privacy-highlight">Location data is used only to provide live route tracking and campaign management, and is never sold.</div>
+
+      <h3>c. Usage Data</h3>
+      <ul>
+        <li>Campaign activity and completion data.</li>
+        <li>Device information (device type, OS version, app version).</li>
+        <li>Interaction with app features (e.g., routes launched, items placed, team earnings).</li>
+      </ul>
+
+      <h3>d. Analytics & Performance Data</h3>
+      <ul>
+        <li>Aggregate data on app usage to help improve our services.</li>
+        <li>Information collected through third-party analytics tools (e.g., Firebase, Google Analytics).</li>
+      </ul>
+    </div>
+
+    <!-- 2 -->
+    <div class="privacy-section" id="s2">
+      <div class="privacy-section-num">2</div>
+      <h2>How We Use Your Information</h2>
+      <p>We use collected information to:</p>
+      <ul>
+        <li>Provide, operate, and improve the App and its features.</li>
+        <li>Track marketing campaigns in real time.</li>
+        <li>Calculate earnings and performance of team members.</li>
+        <li>Communicate with users regarding campaigns, updates, and support.</li>
+        <li>Prevent fraud, abuse, or unauthorized access.</li>
+        <li>Analyze trends and generate reports for better decision-making.</li>
+      </ul>
+    </div>
+
+    <!-- 3 -->
+    <div class="privacy-section" id="s3">
+      <div class="privacy-section-num">3</div>
+      <h2>Sharing Your Information</h2>
+      <div class="privacy-highlight">We do not sell your personal information.</div>
+      <p>We may share your information with:</p>
+      <ul>
+        <li><strong>Team Members & Administrators:</strong> Your account and campaign data, including location, is visible to invited team members within the App.</li>
+        <li><strong>Service Providers:</strong> Third-party vendors who assist in app functionality (e.g., cloud storage, analytics, payment processing).</li>
+        <li><strong>Legal Compliance:</strong> When required by law or to protect rights and safety.</li>
+        <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets.</li>
+      </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="privacy-section" id="s4">
+      <div class="privacy-section-num">4</div>
+      <h2>Location Tracking</h2>
+
+      <h3>a. How We Track Location</h3>
+      <ul>
+        <li>RouteReach collects real-time GPS location data from team members while the app is in use.</li>
+        <li>Allows tracking of routes, campaign progress, and accurate earnings.</li>
+      </ul>
+
+      <h3>b. When Location Is Collected</h3>
+      <ul>
+        <li>Only while using the App, or with explicit consent for background tracking.</li>
+      </ul>
+
+      <h3>c. How Location Data Is Used</h3>
+      <ul>
+        <li>Live route mapping and campaign management.</li>
+        <li>Verification of marketing item placements.</li>
+        <li>Earnings calculation and team performance tracking.</li>
+        <li>Aggregate analytics (locations anonymized).</li>
+      </ul>
+
+      <h3>d. User Control</h3>
+      <ul>
+        <li>Users can enable or disable location tracking at any time in device settings.</li>
+        <li>Disabling background location limits real-time tracking features.</li>
+        <li>Users may request deletion of location history by contacting support.</li>
+      </ul>
+
+      <h3>e. Sharing Location Data</h3>
+      <ul>
+        <li>Shared only with team members within the app and service providers assisting with app functionality.</li>
+        <li>Location data is never sold.</li>
+      </ul>
+    </div>
+
+    <!-- 5 -->
+    <div class="privacy-section" id="s5">
+      <div class="privacy-section-num">5</div>
+      <h2>Your Rights & Choices</h2>
+      <ul>
+        <li><strong>Access & Correction:</strong> View, update, or correct personal information in the App.</li>
+        <li><strong>Opt-Out of Tracking:</strong> Disable location tracking or limit app permissions in device settings.</li>
+        <li><strong>Data Deletion:</strong> Request deletion of your account and personal data by contacting <a href="mailto:support@routereach.app" style="color:var(--purple);font-weight:600;">support@routereach.app</a>.</li>
+        <li><strong>Marketing Communications:</strong> Unsubscribe from marketing emails or push notifications at any time.</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="privacy-section" id="s6">
+      <div class="privacy-section-num">6</div>
+      <h2>Data Retention</h2>
+      <p>We retain personal and campaign data for as long as necessary to provide services or as required by law. When no longer needed, we securely delete or anonymize your information.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="privacy-section" id="s7">
+      <div class="privacy-section-num">7</div>
+      <h2>Security</h2>
+      <p>We implement technical and organizational measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="privacy-section" id="s8">
+      <div class="privacy-section-num">8</div>
+      <h2>Children's Privacy</h2>
+      <p>The App is not intended for children under 13. We do not knowingly collect personal information from children under 13. If we become aware of such data, we will delete it.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="privacy-section" id="s9">
+      <div class="privacy-section-num">9</div>
+      <h2>Third-Party Links</h2>
+      <p>The App may include links to third-party websites or services. We are not responsible for the privacy practices or content of these third parties. We encourage you to review their privacy policies.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="privacy-section" id="s10">
+      <div class="privacy-section-num">10</div>
+      <h2>Updates to This Policy</h2>
+      <p>We may update this Privacy Policy periodically. Users will be notified of material changes via the App or email. The "Effective Date" at the top reflects the last update.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="privacy-section" id="s11">
+      <div class="privacy-section-num">11</div>
+      <h2>Contact Us</h2>
+      <p>For questions or concerns regarding this Privacy Policy or your personal information:</p>
+    </div>
+
+    <!-- Contact card -->
+    <div class="privacy-contact-card">
+      <h3>Have a privacy question?</h3>
+      <p>Our team is happy to help with any questions about your data or this policy.</p>
+      <a href="mailto:support@routereach.app" class="email-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        support@routereach.app
+      </a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="RouteReachLOGO.png" alt="RouteReach" class="logo-img" />
+        <span class="logo-text">RouteReach</span>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="#">Contact</a>
+        <a href="#">Support</a>
+      </div>
+      <div class="footer-copy">© 2026 RouteReach. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
