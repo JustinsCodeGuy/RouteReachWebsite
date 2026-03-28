@@ -2327,6 +2327,7 @@ section {
 
   .hero-sub {
     max-width: 100%;
+    font-size: 15px;
   }
 
   .hero-content .hero-phone {
